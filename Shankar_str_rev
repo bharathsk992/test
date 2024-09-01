@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+// Function to reverse a string
+void reverseString(char str[]) {
+    int n = strlen(str);  // Get the length of the string
+    int start = 0;
+    int end = n - 1;
+    char temp;
+
+    // Swap characters from start to end
+    while (start < end) {
+        temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    char str[100];  // Declare a string with a maximum size of 100 characters
+
+    // Input the string from the user
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Remove the newline ch
